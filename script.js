@@ -1,19 +1,14 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll for anchor links (enhanced with error handling and Bootstrap mobile nav close)
+  // Page navigation handling (no smooth scrolling needed for multi-page structure)
   document.addEventListener('click', function(e) {
-    if (e.target.matches('nav a[href^="#"]')) {
-      e.preventDefault();
-      const targetId = e.target.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        // Close Bootstrap mobile nav if open
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-          const bsCollapse = new bootstrap.Collapse(navbarCollapse);
-          bsCollapse.hide();
-        }
+    // Handle navigation links
+    if (e.target.matches('nav a[href$=".html"]')) {
+      // Close Bootstrap mobile nav if open
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+        bsCollapse.hide();
       }
     }
   });

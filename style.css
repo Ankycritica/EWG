@@ -459,6 +459,83 @@ body {
   height: 40px;
 }
 
+/* Page Header Styles */
+.page-header {
+  background-color: var(--bg-dark);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.page-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Preview Styles */
+.services-preview {
+  background-color: var(--bg-dark);
+  padding: 4rem 0;
+}
+
+.service-preview-card {
+  background: var(--bg-darker);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-preview-card i {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.service-preview-card h5 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.service-preview-card p {
+  color: var(--text-light);
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Active Navigation Link */
+.nav-links a.active {
+  color: var(--text-light);
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
 /* Fade-in Animation */
 .fade-in {
   opacity: 0;
@@ -519,6 +596,20 @@ body {
   
   .hero-banner {
     padding: 4rem 1rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .service-preview-card {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .carousel-img {
@@ -592,6 +683,19 @@ body {
   .hero-content p {
     font-size: 1rem;
     margin-bottom: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+  
+  .service-preview-card {
+    padding: 1rem 0.75rem;
   }
   
   .about-section h2,
