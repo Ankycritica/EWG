@@ -17,6 +17,9 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -92,6 +95,28 @@ body {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+.top-bar {
+  background-color: var(--bg-darker);
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
+}
+
+.top-bar a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.top-bar a:hover {
+  color: var(--text-light);
+}
+
+.top-bar .btn {
+  font-size: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--border-radius);
 }
 
 .hero-banner {
@@ -773,4 +798,228 @@ body {
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
   font-family: 'Playfair Display', serif; /* Premium serif for logistics branding */
+}
+
+/* Performance Optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Image loading optimization */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* Reduce layout shift */
+.carousel-img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service-item,
+  .service-preview-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .navbar .container {
+    flex-wrap: wrap;
+  }
+  
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .footer,
+  .cta-button,
+  .carousel-control-prev,
+  .carousel-control-next,
+  .carousel-indicators {
+    display: none;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* Accessibility Improvements */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Improved button hover states */
+.cta-button,
+.btn-primary {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Phone Number Styles */
+.phone-number {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.phone-number:hover {
+  color: var(--text-light);
+  background-color: rgba(255, 193, 7, 0.1);
+  transform: translateY(-2px);
+}
+
+.phone-number i {
+  font-size: 1rem;
+}
+
+/* Footer Phone */
+.footer-phone {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.footer-phone:hover {
+  color: var(--text-light);
+  background-color: rgba(255, 193, 7, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Contact Page Prominent Phone */
+.contact-phone-prominent {
+  padding: 2rem;
+  background: var(--bg-darker);
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+.contact-phone-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  display: block;
+  transition: var(--transition);
+}
+
+.contact-phone-link:hover {
+  color: var(--text-light);
+  transform: scale(1.05);
+}
+
+.contact-phone-number {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: 'Playfair Display', serif;
+  margin: 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.contact-phone-link:hover .contact-phone-number {
+  color: var(--text-light);
+}
+
+.contact-phone-link small {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsiveness for Phone Number */
+@media (max-width: 992px) {
+  .phone-number {
+    font-size: 0.95rem;
+  }
+  
+  .phone-number span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-wrap: wrap;
+  }
+  
+  .phone-number {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .phone-number i {
+    font-size: 0.9rem;
+  }
+  
+  .contact-phone-number {
+    font-size: 1.5rem;
+  }
+  
+  .contact-phone-prominent {
+    padding: 1.5rem;
+    margin: 1.5rem auto;
+  }
+  
+  .footer-phone {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .phone-number {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .contact-phone-number {
+    font-size: 1.3rem;
+  }
+  
+  .contact-phone-prominent {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
 }
