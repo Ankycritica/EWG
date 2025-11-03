@@ -61,6 +61,29 @@ body {
 .nav-links li {
   position: relative;
 }
+.navbar .container {
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
 
 .nav-links a {
   color: var(--primary-color);
