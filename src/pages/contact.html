@@ -1,12 +1,26 @@
-<form action="https://usebasin.com/f/cc3fafa575dc" method="POST">
+<form action="https://usebasin.com/f/cc3fafa575dc" method="POST" onsubmit="event.preventDefault(); event.target.innerHTML = `<p>Thanks! We'll get back to you shortly.</p>`">
 
-  <input type="text" name="name" placeholder="First & Last Name*" required />
+  <label for="name">First & Last Name*</label>
 
-  <input type="email" name="email" placeholder="Email Address*" required />
+  <input type="text" id="name" name="name" placeholder="First & Last Name*" required />
 
-  <input type="tel" name="phone" placeholder="Phone Number" />
 
-  <select name="service-area" required>
+
+  <label for="email">Email Address*</label>
+
+  <input type="email" id="email" name="email" placeholder="Email Address*" required />
+
+
+
+  <label for="phone">Phone Number</label>
+
+  <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
+
+
+
+  <label for="service-area">Service Area*</label>
+
+  <select id="service-area" name="service-area" required>
 
     <option value="">Select Service Area</option>
 
@@ -18,7 +32,13 @@
 
   </select>
 
-  <textarea name="message" placeholder="Tell us about your white glove delivery or logistics project*" required></textarea>
+
+
+  <label for="message">Tell us about your white glove delivery or logistics project*</label>
+
+  <textarea id="message" name="message" placeholder="Tell us about your white glove delivery or logistics project*" required></textarea>
+
+
 
   <button type="submit">Speak to a Logistics Expert</button>
 
